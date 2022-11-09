@@ -1,11 +1,11 @@
 /*Estilizando imagem central da tela de Inicio*/
 
 * {
-    font-family: 'Montserrat', sans-serif;;
+    font-family: 'Montserrat', sans-serif;
 }
 
 .link {
-    font-size: 18px !important;
+    font-size: 17px !important;
     color: white;
     margin-left: 50px;
 }
@@ -13,6 +13,10 @@
  :root {
     --primary: rgba(241, 170, 38, 0.65);
     --secondary: rgba(63, 210, 223, 0.65);
+}
+
+.container-fluid img {
+    width: 120px;
 }
 
 .logo-centro {
