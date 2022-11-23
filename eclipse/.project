@@ -15,6 +15,7 @@
 		<nature>org.eclipse.jdt.core.javanature</nature>
 		<nature>org.playframework.playclipse.playNature</nature>
 	</natures>
+<<<<<<< HEAD
 	<filteredResources>
 		<filter>
 			<id>1669224002645</id>
@@ -26,4 +27,7 @@
 			</matcher>
 		</filter>
 	</filteredResources>
+=======
+	%LINKS%
+>>>>>>> 2608ae9b55d3498d5dea6e906711764eea132b1d
 </projectDescription>
