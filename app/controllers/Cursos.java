@@ -11,8 +11,8 @@ public class Cursos extends Controller {
         render();
     }
 
-    public static void salvar(Curso curso) {
-        curso.save();
+    public static void salvar(Curso c) {
+        c.save();
         listar();
     }
 

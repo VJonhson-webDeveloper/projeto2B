@@ -26,17 +26,17 @@
                 </div>
 
                 <div class="col-md-12">
-                    <input type="hidden" name="" value="" />
+                    <input type="hidden" name="u.id" value="${u?.id}" />
                     <label for="inputTitulo" class="form-label">Titulo: </label>
-                    <input type="text" class="form-control" id="inputTitulo" name="" value="">
+                    <input type="text" class="form-control" id="inputTitulo" name="u.titulo" value="${u?.titulo}">
                 </div>
                 <div class="col-md-12">
                     <label for="inputFotoCurso" class="form-label">Capa do Curso: </label>
-                    <input type="file" class="form-control" name="" id="inputFotoCurso">
+                    <input type="file" class="form-control" name="u.foto" value="${u?.foto}" id="inputFotoCurso">
                 </div>
                 <div class="col-md-12">
                     <label for="inputDescricao" class="form-label">Descrição: </label>
-                    <textarea class="form-control" name="" id="inputDescricao" cols="30" rows="6">
+                    <textarea class="form-control" name="u.descricao" value="${u?.descricao}" id="inputDescricao" cols="30" rows="6">
                     </textarea>
                 </div>
                 <div class="col-12">
@@ -44,7 +44,6 @@
                     <button type="reset" class="btn" style="background-color: orange;"> Limpar </button><br><br>
                     <a href="@{telainicial.inicio}" style="color: #185B61; text-decoration: none; font-weight: 500;"><i class="bi bi-arrow-left-circle" style="font-size: 18px;"></i> Voltar</a>
                 </div>
-
             </form>
         </div>
     </div>
