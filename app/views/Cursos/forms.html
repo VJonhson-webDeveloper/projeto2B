@@ -20,23 +20,23 @@
         <div class="form-area">
             <img src="@{'/public/images/logo.png'}">
 
-            <form class="row g-3" action="" method="post">
+            <form class="row g-3" action="@{Cursos.salvar}" method="post">
                 <div class="col-md-12">
                     <h5 style="color: #185B61"><i class="bi bi-caret-right-fill"></i> Cadastro de Cursos</h5>
                 </div>
 
                 <div class="col-md-12">
-                    <input type="hidden" name="u.id" value="${u?.id}" />
+                    <input type="hidden" name="c.id" value="${c?.id}" />
                     <label for="inputTitulo" class="form-label">Titulo: </label>
-                    <input type="text" class="form-control" id="inputTitulo" name="u.titulo" value="${u?.titulo}">
+                    <input type="text" class="form-control" id="inputTitulo" name="c.titulo" value="${c?.titulo}">
                 </div>
                 <div class="col-md-12">
                     <label for="inputFotoCurso" class="form-label">Capa do Curso: </label>
-                    <input type="file" class="form-control" name="u.foto" value="${u?.foto}" id="inputFotoCurso">
+                    <input type="file" class="form-control" name="c.foto" value="${c?.foto}" id="inputFotoCurso">
                 </div>
                 <div class="col-md-12">
                     <label for="inputDescricao" class="form-label">Descrição: </label>
-                    <textarea class="form-control" name="u.descricao" value="${u?.descricao}" id="inputDescricao" cols="30" rows="6">
+                    <textarea class="form-control" name="c.descricao" value="${c?.descricao}" id="inputDescricao" cols="30" rows="6">
                     </textarea>
                 </div>
                 <div class="col-12">

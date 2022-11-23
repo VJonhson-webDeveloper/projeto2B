@@ -21,14 +21,14 @@ public class Cursos extends Controller {
         render(cursos);
     }
 
-    public static void remover(Long idCurso) {
-        Curso c = Curso.findById(idCurso);
+    public static void remover(Long id) {
+        Curso c = Curso.findById(id);
         c.delete();
         listar();
     }
 
-    public static void editar(Long idCurso) {
-        Curso c = Curso.findById(idCurso);
+    public static void editar(Long id) {
+        Curso c = Curso.findById(id);
         renderTemplate("Cursos/forms.html", c);
     }
 }
