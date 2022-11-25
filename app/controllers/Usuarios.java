@@ -47,7 +47,8 @@ public class Usuarios extends Controller {
 
     public static void remover(Long id) {
         Usuario u = Usuario.findById(id);
-        u.delete();
+        u.inativar();
+        u.save();
         listar();
     }
 
@@ -55,5 +56,6 @@ public class Usuarios extends Controller {
         Usuario u = Usuario.findById(id);
         renderTemplate("Usuarios/forms.html", u);
     }
+
     
 }
