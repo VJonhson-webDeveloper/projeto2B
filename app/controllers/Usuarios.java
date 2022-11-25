@@ -18,8 +18,17 @@ public class Usuarios extends Controller {
     }
 
     public static void salvar(Usuario u) {
-        u.save();
-        listar();
+        long quantidade = Usuario.count("cpf = ?1", u.cpf);
+
+        if (quantidade == 0) {
+            u.save();
+            flash.success("Cadastro realizado com sucesso!");
+
+        } else {
+            flash.error("Usuário já cadastrado, tente novamente!");
+        }
+        
+        forms();
     }
 
     public static void listar() {
