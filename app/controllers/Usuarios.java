@@ -7,8 +7,10 @@ import org.hibernate.mapping.Collection;
 
 import models.Usuario;
 import play.mvc.Controller;
+import play.mvc.With;
 import play.mvc.results.RenderTemplate;
 
+@With(Segurança.class)
 public class Usuarios extends Controller {
 
     public static void forms() {
