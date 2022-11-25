@@ -2,6 +2,21 @@
     font-family: 'Montserrat', sans-serif;
 }
 
+.form1 {
+    font-family: 'Montserrat', sans-serif;
+    background-color: whitesmoke;
+    border-radius: 15px;
+    box-shadow: 0px 0px 15px -1px rgba(160, 160, 160, 0.84);
+    justify-content: center;
+    margin: 100px 220px 20px 220px;
+    height: 1050px;
+}
+
+.form-area {
+    background-color: whitesmoke;
+    margin: 50px;
+}
+
 .link {
     font-size: 17px !important;
     color: white;
