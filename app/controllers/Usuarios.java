@@ -47,7 +47,6 @@ public class Usuarios extends Controller {
 
     public static void remover(Long id) {
         Usuario u = Usuario.findById(id);
-        u.inativar();
         u.save();
         listar();
     }

@@ -9,7 +9,8 @@ public class Seguranca extends Controller {
     @Before
     static void verificar() {
 
-        if (session.contains("usuario.email") == false ) {
+        if (session.get("usuario") == null) {
+            flash.error("É preciso se autenticar no sistema!");
             Logins.login();
         }
     }

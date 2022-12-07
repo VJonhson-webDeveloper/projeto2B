@@ -17,7 +17,7 @@ public class Logins extends Controller {
             login();
 
         } else {
-            session.put("usuario.email", usuario.email);
+            session.put("usuario", usuario.email);
             Usuarios.listar();
         }
 
