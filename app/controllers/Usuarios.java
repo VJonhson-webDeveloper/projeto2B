@@ -18,8 +18,17 @@ public class Usuarios extends Controller {
     }
 
     public static void salvar(Usuario u) {
-        u.save();
-        listar();
+        long quantidade = Usuario.count("cpf = ?1", u.cpf);
+
+        if (quantidade == 0) {
+            u.save();
+            flash.success("Cadastro realizado com sucesso!");
+
+        } else {
+            flash.error("Usuário já cadastrado, tente novamente!");
+        }
+        
+        forms();
     }
 
     public static void listar() {
@@ -38,7 +47,8 @@ public class Usuarios extends Controller {
 
     public static void remover(Long id) {
         Usuario u = Usuario.findById(id);
-        u.delete();
+        u.inativar();
+        u.save();
         listar();
     }
 
@@ -46,5 +56,6 @@ public class Usuarios extends Controller {
         Usuario u = Usuario.findById(id);
         renderTemplate("Usuarios/forms.html", u);
     }
+
     
 }

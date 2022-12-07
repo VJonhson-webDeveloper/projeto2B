@@ -50,35 +50,39 @@
         </div>
     </nav>
 
-    <!--Listagem de Cursos-->
-    <div class="container">
-        <img class="logo" src="@{'/public/images/logo.png'}">
+    <div class="form1">
+        <div class="form-area">
+            <!--Listagem de Cursos-->
+            <div class="container">
+                <img class="logo" src="@{'/public/images/logo.png'}">
 
 
-        <!--Cards dos cursos-->
-        <div class="cursos">
-            <div class="row g-3" style="margin-top: 25px; margin-bottom: 25px;">
-                <div class="col-md-12">
-                    <h5 style="color: #185B61;"><i class="bi bi-caret-right-fill"></i> Listagem de Cursos</h5>
-                </div>
-            </div>
-
-            <div class="row row-cols-1 row-cols-md-3 g-4">
-                #{list items:cursos, as:'c'}
-                <div class="col">
-                    <div class="card h-100 border-info mb-3">
-                        <img src="@{'/public/images/beginner.png'}" class="card-img-top">
-                        <div class="card-body">
-                            <h5 class="card-title">${c.titulo}</h5>
-                            <p class="card-text">${c.descricao}</p>
-                        </div>
-                        <div class="card-footer">
-                            <a href="@{Cursos.editar(c.id)}" class="btn btn-danger" style="background-color: orange;">Editar</a>
-                            <a href="@{Cursos.remover(c.id)}" class="btn btn-danger" onclick="if (!confirm('Deseja realmente remover este curso?')) return false;">Remover</a>
+                <!--Cards dos cursos-->
+                <div class="cursos">
+                    <div class="row g-3" style="margin-top: 25px; margin-bottom: 25px;">
+                        <div class="col-md-12">
+                            <h5 style="color: #185B61;"><i class="bi bi-caret-right-fill"></i> Listagem de Cursos</h5>
                         </div>
                     </div>
+
+                    <div class="row row-cols-1 row-cols-md-3 g-4">
+                        #{list items:cursos, as:'c'}
+                        <div class="col">
+                            <div class="card h-100 border-info mb-3">
+                                <img src="@{'/public/images/beginner.png'}" class="card-img-top">
+                                <div class="card-body">
+                                    <h5 class="card-title">${c.titulo}</h5>
+                                    <p class="card-text">${c.descricao}</p>
+                                </div>
+                                <div class="card-footer">
+                                    <a href="@{Cursos.editar(c.id)}" class="btn btn-danger" style="background-color: orange;">Editar</a>
+                                    <a href="@{Cursos.remover(c.id)}" class="btn btn-danger" onclick="if (!confirm('Deseja realmente remover este curso?')) return false;">Remover</a>
+                                </div>
+                            </div>
+                        </div>
+                        #{/list}
+                    </div>
                 </div>
-                #{/list}
             </div>
         </div>
     </div>

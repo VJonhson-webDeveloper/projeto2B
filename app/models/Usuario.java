@@ -17,5 +17,18 @@ public class Usuario extends Model {
     public String estado;
     public String idade;
     public String escolaridade;
+    public Boolean status;
+
+    public Usuario() {
+        status = true;
+    }
+
+    public void inativar() {
+        status = false;
+    }
+
+    public void ativar() {
+        status = true;
+    }
 
 }

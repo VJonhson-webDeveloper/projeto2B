@@ -16,6 +16,9 @@
 		<nature>org.playframework.playclipse.playNature</nature>
 	</natures>
 <<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 4439e6fae645f548ae954e1093839e730c4decbf
 	<linkedResources>
 		<link>
 			<name>docviewer</name>
@@ -30,7 +33,11 @@
 	</linkedResources>
 	<filteredResources>
 		<filter>
+<<<<<<< HEAD
+			<id>1669382093026</id>
+=======
 			<id>1669224002653</id>
+>>>>>>> 4439e6fae645f548ae954e1093839e730c4decbf
 			<name></name>
 			<type>30</type>
 			<matcher>
@@ -39,10 +46,13 @@
 			</matcher>
 		</filter>
 	</filteredResources>
+<<<<<<< HEAD
+=======
 =======
 	<linkedResources><link><name>docviewer</name><type>2</type><location>C:/Users/20191064010025/Desktop/play-1.5.3/modules/docviewer/app</location></link>
 <link><name>public/docviewer</name><type>2</type><location>C:/Users/20191064010025/Desktop/play-1.5.3/modules/docviewer/public</location></link>
 <link><name>docviewer</name><type>2</type><location>C:/Users/55849/Downloads/playFramework/play-1.5.3/modules/docviewer/app</location></link>
 </linkedResources>
 >>>>>>> 2608ae9b55d3498d5dea6e906711764eea132b1d
+>>>>>>> 4439e6fae645f548ae954e1093839e730c4decbf
 </projectDescription>
