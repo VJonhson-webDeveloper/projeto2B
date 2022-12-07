@@ -10,14 +10,14 @@ public class Logins extends Controller {
     }
 
     public static void logar(String email, String senha) {
-        Usuario usuario = Usuario.find("login = ?1 and senha = ?2", email, senha).first();
+        Usuario usuario = Usuario.find("email = ?1 and senha = ?2", email, senha).first();
 
         if (usuario == null) {
             flash.error("Email ou senha inválidos");
             login();
 
         } else {
-            session.put("usuario", usuario.email);
+            session.put("usuario.email", usuario.email);
             Usuarios.listar();
         }
 

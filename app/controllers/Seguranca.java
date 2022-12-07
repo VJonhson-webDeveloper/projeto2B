@@ -4,12 +4,12 @@ import org.junit.Before;
 
 import play.mvc.Controller;
 
-public class Segurança extends Controller {
+public class Seguranca extends Controller {
     
     @Before
     static void autenticarUsuarios() {
-        if (session.get("usuario") == null) {
-            flash.error("É necessário se autenticar no sistema!");
+
+        if (session.contains("usuario.email") == false ) {
             Logins.login();
         }
     }
