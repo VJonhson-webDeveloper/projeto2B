@@ -10,7 +10,7 @@ import play.mvc.Controller;
 import play.mvc.With;
 import play.mvc.results.RenderTemplate;
 
-@With(Segurança.class)
+@With(Seguranca.class)
 public class Usuarios extends Controller {
 
     public static void forms() {
@@ -47,7 +47,6 @@ public class Usuarios extends Controller {
 
     public static void remover(Long id) {
         Usuario u = Usuario.findById(id);
-        u.inativar();
         u.save();
         listar();
     }

@@ -1,6 +1,8 @@
 package models;
 
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 
 import play.db.jpa.Model;
 
@@ -17,18 +19,8 @@ public class Usuario extends Model {
     public String estado;
     public String idade;
     public String escolaridade;
-    public Boolean status;
 
-    public Usuario() {
-        status = true;
-    }
-
-    public void inativar() {
-        status = false;
-    }
-
-    public void ativar() {
-        status = true;
-    }
+    @Enumerated(EnumType.STRING)
+    public Status status;
 
 }
