@@ -20,6 +20,10 @@ public class Usuario extends Model {
     public String idade;
     public String escolaridade;
 
+    public Usuario () {
+        status = Status.ATIVO;
+    }
+
     @Enumerated(EnumType.STRING)
     public Status status;
 

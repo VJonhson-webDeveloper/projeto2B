@@ -6,7 +6,7 @@ import models.Curso;
 import play.mvc.Controller;
 import play.mvc.With;
 
-@With(Seguranca.class)
+
 public class Cursos extends Controller {
     
     public static void forms() {
