@@ -5,17 +5,21 @@ import java.util.List;
 
 import org.hibernate.mapping.Collection;
 
+import models.Curso;
 import models.Status;
 import models.Usuario;
 import play.mvc.Controller;
 import play.mvc.With;
 import play.mvc.results.RenderTemplate;
+import security.Administrador;
+import security.Seguranca;
 
-
+@With(Seguranca.class)
 public class Usuarios extends Controller {
 
     public static void forms() {
-        render();
+        List<Curso> cursos = Curso.findAll();
+        render(cursos);
     }
 
     public static void salvar(Usuario u) {
@@ -32,6 +36,7 @@ public class Usuarios extends Controller {
         forms();
     }
 
+    @Administrador
     public static void listar() {
         String termo = params.get("termo");
 		
@@ -47,16 +52,19 @@ public class Usuarios extends Controller {
 		render(usuarios, termo);
     }
 
+    @Administrador
     public static void remover(Long id) {
         Usuario u = Usuario.findById(id);
         u.status = Status.INAVTIVO;
         u.save();
+        flash.success("Usuário removido com sucesso!");
         listar();
     }
 
     public static void editar(Long id) {
+        List<Curso> cursos = Curso.findAll();
         Usuario u = Usuario.findById(id);
-        renderTemplate("Usuarios/forms.html", u);
+        renderTemplate("Usuarios/forms.html", u, cursos);
     }
 
     

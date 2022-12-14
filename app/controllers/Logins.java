@@ -1,6 +1,8 @@
 package controllers;
 
+import models.Operador;
 import models.Usuario;
+import play.libs.Crypto;
 import play.mvc.Controller;
 
 public class Logins extends Controller {
@@ -10,14 +12,15 @@ public class Logins extends Controller {
     }
 
     public static void logar(String email, String senha) {
-        Usuario usuario = Usuario.find("email = ?1 and senha = ?2", email, senha).first();
+        Operador operador = Operador.find("login = ?1 and senha = ?2", email, Crypto.passwordHash(senha)).first();
 
-        if (usuario == null) {
+        if (operador == null) {
             flash.error("Email ou senha inválidos");
             login();
 
         } else {
-            session.put("usuario", usuario.email);
+            session.put("operador", operador.email);
+            session.put("papel", operador.papel);
             Usuarios.listar();
         }
 
