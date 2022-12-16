@@ -47,7 +47,16 @@ public class UsuariosAdmin extends Controller {
         List<Curso> cursos = Curso.findAll();
         Usuario u = Usuario.findById(id);
         renderTemplate("Usuarios/forms.html", u, cursos);
+
     }
 
-    
+    public static void detalhar(Long id) {
+        Usuario usuario = Usuario.findById(id);
+        render(usuario);
+    }
+
+    public static void getFoto(Long id) {
+        Usuario usuario = Usuario.findById(id);
+        renderBinary(usuario.foto.getFile());
+    }
 }

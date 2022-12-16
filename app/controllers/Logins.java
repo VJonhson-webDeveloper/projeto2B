@@ -21,7 +21,7 @@ public class Logins extends Controller {
             session.put("usuario", usuario.email);
             session.put("papel", usuario.papel);
             flash.error("Seja bem-vindo!");
-            UsuariosAdmin.listar();
+            UsuariosAdmin.detalhar(usuario.id);
         }
 
     }
