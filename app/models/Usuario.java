@@ -22,9 +22,13 @@ public class Usuario extends Model {
 
     public Usuario () {
         status = Status.ATIVO;
+        papel = Papel.USUARIO;
     }
 
     @Enumerated(EnumType.STRING)
     public Status status;
+
+    @Enumerated(EnumType.STRING)
+    public Papel papel;
 
 }

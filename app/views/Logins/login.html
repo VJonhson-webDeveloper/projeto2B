@@ -9,6 +9,18 @@
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;1,100;1,200;1,300;1,400;1,500&display=swap" rel="stylesheet">
 
 <body>
+    #{if flash.success}
+    <div class="alert alert-success alert-dismissible fade show" role="alert">
+        ${flash.success}
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+    #{/if} #{if flash.error}
+    <div class="alert alert-warning alert-dismissible fade show" role="alert">
+        ${flash.error}
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+    #{/if}
+    
     <div class="form">
         <div class="form-area">
             <img src="@{'/public/images/logo.png'}">

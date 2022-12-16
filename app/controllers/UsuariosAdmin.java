@@ -6,6 +6,7 @@ import java.util.List;
 import org.hibernate.mapping.Collection;
 
 import models.Curso;
+import models.Papel;
 import models.Status;
 import models.Usuario;
 import play.mvc.Controller;
@@ -15,26 +16,7 @@ import security.Administrador;
 import security.Seguranca;
 
 @With(Seguranca.class)
-public class Usuarios extends Controller {
-
-    public static void forms() {
-        List<Curso> cursos = Curso.findAll();
-        render(cursos);
-    }
-
-    public static void salvar(Usuario u) {
-        long quantidade = Usuario.count("cpf = ?1", u.cpf);
-
-        if (quantidade == 0) {
-            u.save();
-            flash.success("Cadastro realizado com sucesso!");
-
-        } else {
-            flash.error("Usuário já cadastrado, tente novamente!");
-        }
-        
-        forms();
-    }
+public class UsuariosAdmin extends Controller {
 
     @Administrador
     public static void listar() {
@@ -42,7 +24,7 @@ public class Usuarios extends Controller {
 		
 		List<Usuario> usuarios = Collections.EMPTY_LIST;
 		if (termo == null || termo.isEmpty()) {
-			usuarios = Usuario.find("status = ?1", Status.ATIVO).fetch();
+			usuarios = Usuario.find("status = ?1 AND papel = ?2", Status.ATIVO, Papel.USUARIO).fetch();
 		} else {
 			usuarios = Usuario.find("(lower(nome) like ?1 OR cpf like ?2) AND status = ?3", 
 					"%" + termo.toLowerCase() + "%",
