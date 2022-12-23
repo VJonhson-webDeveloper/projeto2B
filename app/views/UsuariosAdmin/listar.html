@@ -16,7 +16,7 @@
 
             <h5 style="color: #185B61"><i class="bi bi-caret-right-fill"></i> Listagem de Usuários</h5>
 
-            <form action="@{Usuarios.listar}">
+            <form action="@{UsuariosAdmin.listar}">
                 <div class="row">
                     <div class="col-12">
                         <label class="form-label">Termo de busca:</label>
@@ -60,8 +60,8 @@
                         <td>${u.idade}</td>
                         <td>${u.escolaridade}</td>
                         <td>
-                            <a href="@{Usuarios.remover(u.id)}" class="btn btn-danger btn-sm">Remover</a><br>
-                            <a href="@{Usuarios.editar(u.id)}" class="btn btn-danger btn-sm" style="background-color: orange; margin-top: 5px;">Editar</a>
+                            <a href="@{UsuariosAdmin.remover(u.id)}" class="btn btn-danger btn-sm">Remover</a><br>
+                            <a href="@{UsuariosAdmin.editar(u.id)}" class="btn btn-danger btn-sm" style="background-color: orange; margin-top: 5px;">Editar</a>
                         </td>
                     </tr>
                     #{/list}

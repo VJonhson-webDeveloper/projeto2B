@@ -5,39 +5,26 @@ import java.util.List;
 
 import org.hibernate.mapping.Collection;
 
+import models.Curso;
+import models.Papel;
 import models.Status;
 import models.Usuario;
 import play.mvc.Controller;
 import play.mvc.With;
 import play.mvc.results.RenderTemplate;
+import security.Administrador;
+import security.Seguranca;
 
+@With(Seguranca.class)
+public class UsuariosAdmin extends Controller {
 
-public class Usuarios extends Controller {
-
-    public static void forms() {
-        render();
-    }
-
-    public static void salvar(Usuario u) {
-        long quantidade = Usuario.count("cpf = ?1", u.cpf);
-
-        if (quantidade == 0) {
-            u.save();
-            flash.success("Cadastro realizado com sucesso!");
-
-        } else {
-            flash.error("Usuário já cadastrado, tente novamente!");
-        }
-        
-        forms();
-    }
-
+    @Administrador
     public static void listar() {
         String termo = params.get("termo");
 		
 		List<Usuario> usuarios = Collections.EMPTY_LIST;
 		if (termo == null || termo.isEmpty()) {
-			usuarios = Usuario.find("status = ?1", Status.ATIVO).fetch();
+			usuarios = Usuario.find("status = ?1 AND papel = ?2", Status.ATIVO, Papel.USUARIO).fetch();
 		} else {
 			usuarios = Usuario.find("(lower(nome) like ?1 OR cpf like ?2) AND status = ?3", 
 					"%" + termo.toLowerCase() + "%",
@@ -47,17 +34,29 @@ public class Usuarios extends Controller {
 		render(usuarios, termo);
     }
 
+    @Administrador
     public static void remover(Long id) {
         Usuario u = Usuario.findById(id);
         u.status = Status.INAVTIVO;
         u.save();
+        flash.success("Usuário removido com sucesso!");
         listar();
     }
 
     public static void editar(Long id) {
+        List<Curso> cursos = Curso.findAll();
         Usuario u = Usuario.findById(id);
-        renderTemplate("Usuarios/forms.html", u);
+        renderTemplate("Usuarios/forms.html", u, cursos);
+
     }
 
-    
+    public static void detalhar(Long id) {
+        Usuario usuario = Usuario.findById(id);
+        render(usuario);
+    }
+
+    public static void getFoto(Long id) {
+        Usuario usuario = Usuario.findById(id);
+        renderBinary(usuario.foto.getFile());
+    }
 }
