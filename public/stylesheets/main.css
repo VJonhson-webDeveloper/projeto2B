@@ -19,19 +19,130 @@
     width: 120px;
 }
 
-.logo-centro {
-    text-align: center;
-    place-content: center;
-    background: linear-gradient(135deg, var(--primary), var(--secondary)),
-    url("/public/images/IFRN-João-Câmara.png") no-repeat center center / cover;
-    height: 500px;
-    width: 100%;
+
+/*=========HOME============*/
+
+.home {
+    padding: 3.5rem 0 2rem;
 }
 
-.logo-centro img {
-    margin-top: 90px;
-    height: 300px;
+.home_container {
+    position: relative;
+    row-gap: 2rem;
 }
+
+.home_img {
+    width: 350px;
+    justify-self: center;
+    border-radius: 5px;
+}
+
+.home_title {
+    line-height: 140%;
+    margin-bottom: 25px;
+}
+
+.home_description {
+    margin-bottom: 35px;
+}
+
+.home_social {
+    position: absolute;
+    top: 2rem;
+    right: -1rem;
+    display: grid;
+    justify-items: center;
+    row-gap: 3.5rem;
+}
+
+.home_social-follow {
+    font-weight: 500;
+    font-size: 14px;
+    color: #185B61;
+    position: relative;
+    transform: rotate(90deg);
+}
+
+.home_social-follow::after {
+    content: '';
+    position: absolute;
+    width: 1rem;
+    height: 2px;
+    background-color: #185B61;
+    right: -45%;
+    top: 50%;
+}
+
+.home_social-links {
+    display: inline-flex;
+    flex-direction: column;
+    row-gap: .25rem;
+}
+
+.home_social-link {
+    font-size: 1.2rem;
+    color: #185B61;
+    transition: .3s;
+}
+
+.home_social-link:hover {
+    transform: translateX(.25rem);
+    color: #49c5cc;
+}
+
+
+/*=============BUTTONS===============*/
+
+.button {
+    display: inline-block;
+    background-color: #185B61;
+    color: white;
+    padding: 1rem 1.75rem;
+    border-radius: .5rem;
+    font-weight: 500;
+    transition: .3s;
+    text-decoration: none;
+}
+
+.button:hover {
+    background-color: #49c5cc;
+    color: white;
+}
+
+.button_icon {
+    transition: .3s;
+}
+
+.button:hover .button_icon {
+    transform: translateX(.25rem);
+}
+
+.button--flex {
+    display: inline-flex;
+    align-items: center;
+    column-gap: .5rem;
+}
+
+
+/*=================== ABOUT =================*/
+
+.about_container {
+    row-gap: 2rem;
+}
+
+.about_img {
+    width: 280px;
+    justify-self: center;
+}
+
+.about_title {
+    margin-bottom: 25px;
+}
+
+.about_description {
+    margin-bottom: 35px;
+}
+
 
 /*Estilizando o Footer*/
 
