@@ -7,7 +7,7 @@
 .link {
     font-size: 17px !important;
     color: white;
-    margin-left: 50px;
+    margin-left: 30px;
 }
 
  :root {
@@ -32,9 +32,8 @@
 }
 
 .home_img {
-    width: 350px;
+    width: 450px;
     justify-self: center;
-    border-radius: 5px;
 }
 
 .home_title {
@@ -44,6 +43,8 @@
 
 .home_description {
     margin-bottom: 35px;
+    font-size: 18px;
+    text-align: justify;
 }
 
 .home_social {
@@ -57,7 +58,7 @@
 
 .home_social-follow {
     font-weight: 500;
-    font-size: 14px;
+    font-size: 15px;
     color: #185B61;
     position: relative;
     transform: rotate(90deg);
@@ -80,7 +81,7 @@
 }
 
 .home_social-link {
-    font-size: 1.2rem;
+    font-size: 1.4rem;
     color: #185B61;
     transition: .3s;
 }
@@ -126,21 +127,9 @@
 
 /*=================== ABOUT =================*/
 
-.about_container {
-    row-gap: 2rem;
-}
-
-.about_img {
-    width: 280px;
-    justify-self: center;
-}
-
-.about_title {
-    margin-bottom: 25px;
-}
-
-.about_description {
-    margin-bottom: 35px;
+.about {
+    margin-top: 100px;
+    margin-bottom: 100px;
 }
 
 
@@ -250,4 +239,33 @@ footer {
     background-color: white;
     font-weight: bold;
     border-radius: 3px;
+}
+
+@media screen and (min-width: 767px) {
+    body {
+        margin: 0;
+    }
+    .home_container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .home {
+        padding: 8rem 0 5rem;
+    }
+    .home_container {
+        align-items: center;
+    }
+    .home_img {
+        width: 500px;
+        order: 1;
+    }
+}
+
+@media screen and (min-width: 992px) {
+    .container {
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .section {
+        padding: 8rem 0 1rem;
+    }
 }
