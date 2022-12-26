@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <projectDescription>
-	<name>projeto1B</name>
+	<name>%PROJECT_NAME%</name>
 	<comment></comment>
 	<projects>
 	</projects>
@@ -9,6 +9,9 @@
 	<natures>
 		<nature>org.playframework.playclipse.playNature</nature>
 	</natures>
+<<<<<<< HEAD
+	%LINKS%
+=======
 	<linkedResources>
 		<link>
 			<name>docviewer</name>
@@ -21,4 +24,5 @@
 			<location>C:/Users/55849/Downloads/playFramework/play-1.5.3/modules/docviewer/public</location>
 		</link>
 	</linkedResources>
+>>>>>>> 06d3c9ab8bbabb12bc35c3d713a0e0fc006b1873
 </projectDescription>
