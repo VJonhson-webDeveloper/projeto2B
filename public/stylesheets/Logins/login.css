@@ -1,26 +1,25 @@
 body {
-    background: linear-gradient(135deg, rgba(241, 170, 38, 0.65), rgba(63, 210, 223, 0.65)), 
-    url() no-repeat center center / cover;
+    background: linear-gradient(135deg, rgba(241, 170, 38, 0.65), rgba(63, 210, 223, 0.65)), url() no-repeat center center / cover;
 }
 
 .form {
     font-family: 'Montserrat', sans-serif;
     background-color: whitesmoke;
     border-radius: 15px;
-    box-shadow: 0px 0px 15px -1px rgba(160, 160, 160, 0.84); 
+    box-shadow: 0px 0px 15px -1px rgba(160, 160, 160, 0.84);
     justify-content: center;
-    margin: 150px 600px 20px 600px; 
+    margin: 150px 450px 20px 450px;
     height: 630px;
 }
 
 .form-area {
-    background-color: whitesmoke; 
+    background-color: whitesmoke;
     margin: 50px;
 }
 
 img {
-    width: 200px; 
+    width: 200px;
     margin-top: 30px;
     margin-bottom: 30px;
-    margin-left: 32%;
+    margin-left: 30%;
 }
