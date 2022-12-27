@@ -94,6 +94,10 @@
 
 /*=============BUTTONS===============*/
 
+.btn-outline-info {
+    margin-left: 225px;
+}
+
 .button {
     display: inline-block;
     background-color: #185B61;
