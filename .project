@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <projectDescription>
-	<name>%PROJECT_NAME%</name>
+	<name>projeto1B</name>
 	<comment></comment>
 	<projects>
 	</projects>
@@ -15,9 +15,6 @@
 		<nature>org.eclipse.jdt.core.javanature</nature>
 		<nature>org.playframework.playclipse.playNature</nature>
 	</natures>
-<<<<<<< HEAD
-	%LINKS%
-=======
 	<linkedResources>
 		<link>
 			<name>docviewer</name>
@@ -32,7 +29,7 @@
 	</linkedResources>
 	<filteredResources>
 		<filter>
-			<id>1672147014268</id>
+			<id>1672246774044</id>
 			<name></name>
 			<type>30</type>
 			<matcher>
@@ -41,5 +38,4 @@
 			</matcher>
 		</filter>
 	</filteredResources>
->>>>>>> 52a59ca60b63341a15fb77229c204c70ec94ad35
 </projectDescription>
