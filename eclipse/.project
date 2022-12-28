@@ -15,24 +15,9 @@
 		<nature>org.eclipse.jdt.core.javanature</nature>
 		<nature>org.playframework.playclipse.playNature</nature>
 	</natures>
-<<<<<<< HEAD
-	%LINKS%
-=======
-	<linkedResources>
-		<link>
-			<name>docviewer</name>
-			<type>2</type>
-			<location>C:/Users/55849/Downloads/playFramework/play-1.5.3/modules/docviewer/app</location>
-		</link>
-		<link>
-			<name>public/docviewer</name>
-			<type>2</type>
-			<location>C:/Users/20191064010025/Desktop/play-1.5.3/modules/docviewer/public</location>
-		</link>
-	</linkedResources>
 	<filteredResources>
 		<filter>
-			<id>1672147014268</id>
+			<id>1672147014253</id>
 			<name></name>
 			<type>30</type>
 			<matcher>
@@ -41,5 +26,4 @@
 			</matcher>
 		</filter>
 	</filteredResources>
->>>>>>> 52a59ca60b63341a15fb77229c204c70ec94ad35
 </projectDescription>
