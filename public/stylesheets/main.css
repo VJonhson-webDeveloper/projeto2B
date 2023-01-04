@@ -2,9 +2,13 @@
 
 * {
     font-family: 'Montserrat', sans-serif;
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-.link {
+.link-nav {
     font-size: 17px !important;
     color: white;
     margin-left: 30px;
