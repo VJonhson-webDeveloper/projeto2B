@@ -204,7 +204,7 @@ header .image-text .header-text {
     height: 100vh;
     left: 250px;
     top: 9.5%;
-    width: calc(100% - 88px);
+    width: calc(100% - 150px);
     background: var(--body-color);
     transition: var(--transition-05);
 }
@@ -213,16 +213,46 @@ header .image-text .header-text {
     font-weight: 500;
     color: var(--text-color);
     padding: 8px 40px;
+    margin-top: 50px;
 }
 
 .sidebar.close~.home {
     left: 88px;
-    width: calc(100% - 88px);
+    width: calc(100% - 150px);
 }
 
 .text img {
-    width: 150px;
+    width: 225px;
     border-radius: 5px;
+}
+
+table {
+    width: 50%;
+}
+
+.row {
+    padding: 50px;
+}
+
+.status {
+    background-color: rgba(255, 166, 0, 0.801);
+    padding: 6px 14px 6px 14px;
+    border-radius: 6px;
+    color: var(--text-color);
+    margin-top: 15px;
+    font-weight: 500;
+}
+
+.label {
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--primary-color);
+}
+
+.label-text {
+    font-size: 15px;
+    font-weight: 500;
+    color: var(--text-color);
 }
 
 

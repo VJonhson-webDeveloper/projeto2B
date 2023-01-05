@@ -106,27 +106,75 @@
 
         <section class="home">
             <div class="text">
-                <img src="@{'/public/images/estudante.jpeg'}" alt=""><br>
+                <small class="status">Ativo</small>
                 <table class="table">
                     <thead>
                         <tr>
-                            <th scope="col">DADOS PESSOAIS:</th>
+                            <th scope="col" colspan="2"><img src="@{'/public/images/estudante.jpeg'}" alt=""></th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
-                            <th scope="row">1</th>
-                            <td>Mark</td>
-                            <td>Otto</td>
-                            <td>@mdo</td>
+                            <td scope="row">
+                                <small class="label">Nome completo:</small><br>
+                                <small class="label-text">Victor Jonhson Aciole do Nascimento</small>
+                            </td>
+                            <td>
+                                <small class="label">E-mail:</small><br>
+                                <small class="label-text">v.nascimento@escolar.ifrn.edu.br</small>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td scope="row">
+                                <small class="label">CPF:</small><br>
+                                <small class="label-text">116.708.764-03</small>
+                            </td>
+                            <td>
+                                <small class="label">Telefone:</small><br>
+                                <small class="label-text">(84) 99188-6606</small>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td scope="row">
+                                <small class="label">Idade:</small><br>
+                                <small class="label-text">Entre 16 e 24 anos</small>
+                            </td>
+                            <td>
+                                <small class="label">Escolaridade:</small><br>
+                                <small class="label-text">Ensino Médio</small>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td scope="row">
+                                <small class="label">Estado:</small><br>
+                                <small class="label-text">Rio Grande do Norte</small>
+                            </td>
+                            <td>
+                                <small class="label">Cidade:</small><br>
+                                <small class="label-text">Jardim de Angicos</small>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td scope="row" colspan="2">
+                                <small class="status">Aluno do IFRN</small>
+                            </td>
                         </tr>
                     </tbody>
                     <tfoot>
-                        ...
+                        <tr>
+                            <td scope="row" colspan="2">
+                                <a href="" class="btn text-white" style="background-color: #185B61;"><i class="bi bi-person-fill"></i> Cursos</a>
+                                <a href="" class="btn text-white" style="background-color: #185B61;"><i class="bi bi-cloud-download icon"></i> Certificados</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td scope="row" colspan="2">
+                                <a href="" class="btn btn-info">Editar dados <i class="bi bi-chevron-down"></i> </a>
+                                <a href="" class="btn btn-info">Ir para o topo <i class="bi bi-chevron-up"></i></a>
+                            </td>
+                        </tr>
                     </tfoot>
                 </table>
-                <p class="form-control" id="UserNome">Victor Jonhson Aciole do Nascimento</p>
-                <p class="form-control" id="UserEmail">v.nascimento@escolar.ifrn.edu.br</p>
             </div>
         </section>
 
