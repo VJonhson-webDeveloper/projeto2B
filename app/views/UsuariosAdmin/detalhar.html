@@ -34,7 +34,7 @@
                         <a class="nav-link link-nav" href="#">Redes sociais</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link link btn btn-outline-info" href="@{logins.login}"> Sair </a>
+                        <a class="nav-link link btn btn-outline-info" href="@{logins.logout}"> Sair </a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link link btn btn-info" href="@{usuariosAlunos.forms}" style="margin-left: 15px;">Cadastrar-se</a>
@@ -106,57 +106,57 @@
 
         <section class="home">
             <div class="text">
-                <small class="status">Ativo</small>
+                <small class="status">${u?.status}</small>
                 <table class="table">
                     <thead>
                         <tr>
-                            <th scope="col" colspan="2"><img src="@{'/public/images/estudante.jpeg'}" alt="" class="rounded-circle"></th>
+                            <th scope="col" colspan="2"><img src="@{UsuariosAdmin.getFoto(u?.id)}" alt="" class="rounded-circle"></th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
                             <td scope="row" style="padding: 12px;">
                                 <small class="label">Nome completo:</small><br>
-                                <small class="label-text">Victor Jonhson Aciole do Nascimento</small>
+                                <small class="label-text">${u?.nome}</small>
                             </td>
-                            <td>
+                            <td style="padding: 12px;">
                                 <small class="label">E-mail:</small><br>
-                                <small class="label-text">v.nascimento@escolar.ifrn.edu.br</small>
+                                <small class="label-text">${u?.email}</small>
                             </td>
                         </tr>
                         <tr>
                             <td scope="row" style="padding: 12px;">
                                 <small class="label">CPF:</small><br>
-                                <small class="label-text">116.708.764-03</small>
+                                <small class="label-text">${u?.cpf}</small>
                             </td>
-                            <td>
+                            <td style="padding: 12px;">
                                 <small class="label">Telefone:</small><br>
-                                <small class="label-text">(84) 99188-6606</small>
+                                <small class="label-text">${u?.telefone}</small>
                             </td>
                         </tr>
                         <tr>
                             <td scope="row" style="padding: 12px;">
                                 <small class="label">Idade:</small><br>
-                                <small class="label-text">Entre 16 e 24 anos</small>
+                                <small class="label-text">${u?.idade}</small>
                             </td>
-                            <td>
+                            <td style="padding: 12px;">
                                 <small class="label">Escolaridade:</small><br>
-                                <small class="label-text">Ensino Médio</small>
+                                <small class="label-text">${u?.escolaridade}</small>
                             </td>
                         </tr>
                         <tr>
                             <td scope="row" style="padding: 12px;">
                                 <small class="label">Estado:</small><br>
-                                <small class="label-text">Rio Grande do Norte</small>
+                                <small class="label-text">${u?.estado}</small>
                             </td>
-                            <td>
+                            <td style="padding: 12px;">
                                 <small class="label">Cidade:</small><br>
-                                <small class="label-text">Jardim de Angicos</small>
+                                <small class="label-text">${u?.cidade}</small>
                             </td>
                         </tr>
                         <tr>
                             <td scope="row" colspan="2" style="padding: 12px;">
-                                <small class="status">Aluno do IFRN</small>
+                                <small class="status">${u?.perfil}</small>
                             </td>
                         </tr>
                     </tbody>

@@ -5,6 +5,8 @@ import java.util.List;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
@@ -15,6 +17,10 @@ import play.db.jpa.Model;
 @Entity
 public class Usuario extends Model {
     
+    @Id
+    @GeneratedValue
+    public Long id;
+
     public String nome;
     public String email;
     public String senha;
@@ -30,9 +36,9 @@ public class Usuario extends Model {
     //Implementando relacionamentos
     @ManyToMany
     @JoinTable(name="Usuario_Curso")
-    public List<Curso> curso;
+    public List<Curso> cursos;
 
-    public Usuario () {
+    public Usuario() {
         status = Status.ATIVO;
         papel = Papel.USUARIO;
     }
