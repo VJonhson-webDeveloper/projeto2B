@@ -217,7 +217,8 @@ header .image-text .header-text {
 
 .text img {
     width: 225px;
-    border-radius: 5px;
+    height: 220px;
+    object-fit: cover;
 }
 
 table {
@@ -359,25 +360,19 @@ footer {
         align-items: center;
         justify-content: center;
     }
-
     .nav-link .link a img {
         margin-left: 200px;
-
     }
-
     .nav-link {
         color: white;
         font-size: 17px;
     }
-    
     .link-nav {
         margin-left: 35px;
     }
-
     .sidebar {
-        top: 6.5%;
+        top: 6.8%;
     }
-
     .btn-outline-info {
         margin-left: 250px;
     }

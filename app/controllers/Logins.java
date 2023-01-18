@@ -20,9 +20,9 @@ public class Logins extends Controller {
         } else {
             session.put("usuario", usuario.email);
             session.put("papel", usuario.papel);
-            flash.error("Seja bem-vindo!");
+            flash.success("Seja bem-vindo!");
             UsuariosAdmin.detalhar(usuario.id);
-        }
+        } 
 
     }
 

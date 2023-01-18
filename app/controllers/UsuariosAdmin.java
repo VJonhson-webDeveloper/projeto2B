@@ -37,7 +37,7 @@ public class UsuariosAdmin extends Controller {
     @Administrador
     public static void remover(Long id) {
         Usuario u = Usuario.findById(id);
-        u.status = Status.INAVTIVO;
+        u.status = Status.INATIVO;
         u.save();
         flash.success("Usuário removido com sucesso!");
         listar();
@@ -51,12 +51,12 @@ public class UsuariosAdmin extends Controller {
     }
 
     public static void detalhar(Long id) {
-        Usuario usuario = Usuario.findById(id);
-        render(usuario);
+        Usuario u = Usuario.findById(id);
+        render(u);
     }
 
     public static void getFoto(Long id) {
-        Usuario usuario = Usuario.findById(id);
-        renderBinary(usuario.foto.getFile());
+        Usuario u = Usuario.findById(id);
+        renderBinary(u.foto.getFile());
     }
 }
