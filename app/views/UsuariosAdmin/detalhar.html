@@ -53,8 +53,8 @@
                     </span>
 
                     <div class="text header-text">
-                        <span class="nome">Victor Jonhson</span>
-                        <span class="papel">Aluno do IFRN</span>
+                        <span class="nome">${u?.nome}</span>
+                        <span class="papel">${u?.perfil}</span>
                     </div>
                 </div>
 
@@ -95,7 +95,7 @@
 
                 <div class="bottom-content">
                     <li class="">
-                        <a href="#">
+                        <a href="@{logins.logout}">
                             <i class="bi bi-box-arrow-left icon"></i>
                             <span class="text nav-text">Sair</span>
                         </a>

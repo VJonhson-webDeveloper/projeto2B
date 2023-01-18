@@ -11,6 +11,12 @@ import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 
+import play.data.validation.Email;
+import play.data.validation.Match;
+import play.data.validation.Max;
+import play.data.validation.Min;
+import play.data.validation.MinSize;
+import play.data.validation.Required;
 import play.db.jpa.Blob;
 import play.db.jpa.Model;
 
@@ -21,16 +27,39 @@ public class Usuario extends Model {
     @GeneratedValue
     public Long id;
 
+    @Required
     public String nome;
+
+    @Required
+    @Email
     public String email;
+
+    @Required
     public String senha;
+
+    @Required 
+    @Match("[0-9]{2} [0-9]{5}-[0-9]{4}")
     public String telefone;
+
+    @Required
+    @Match("[0-9]{3}.[0-9]{3}.[0-9]{3}-[0-9]{2}")
     public String cpf;
+
+    @Required
     public String perfil;
+
+    @Required
     public String cidade;
+
+    @Required
     public String estado;
+
+    @Required
     public String idade;
+
+    @Required
     public String escolaridade;
+
     public Blob foto;
 
     //Implementando relacionamentos
