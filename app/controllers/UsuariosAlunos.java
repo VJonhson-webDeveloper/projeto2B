@@ -4,6 +4,7 @@ import java.util.List;
 
 import models.Curso;
 import models.Usuario;
+import play.libs.Crypto;
 import play.mvc.Controller;
 
 public class UsuariosAlunos extends Controller {
@@ -16,6 +17,7 @@ public class UsuariosAlunos extends Controller {
         long quantidade = Usuario.count("cpf = ?1", u.cpf);
 
         if (quantidade == 0) {
+            u.senha = Crypto.passwordHash(u.senha);
             u.save();
             flash.success("Cadastro realizado com sucesso!");
 
