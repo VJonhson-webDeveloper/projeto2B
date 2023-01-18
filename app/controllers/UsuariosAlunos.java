@@ -3,7 +3,7 @@ package controllers;
 import java.util.List;
 
 import models.Curso;
-import models.Usuario;
+import models.Usuario; 
 import play.cache.Cache;
 import play.data.validation.Valid;
 import play.libs.Crypto;

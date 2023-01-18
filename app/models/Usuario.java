@@ -31,14 +31,14 @@ public class Usuario extends Model {
     public String nome;
 
     @Required
-    @Email
+    @Email(message = "O email digitado não é válido!")
     public String email;
 
     @Required
     public String senha;
 
     @Required 
-    @Match("[0-9]{2} [0-9]{5}-[0-9]{4}")
+    @Match("[0-9]{2} [0-9]{5}-[0-9]{4}") 
     public String telefone;
 
     @Required
@@ -60,6 +60,7 @@ public class Usuario extends Model {
     @Required
     public String escolaridade;
 
+    @Required 
     public Blob foto;
 
     //Implementando relacionamentos
