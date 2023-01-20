@@ -25,57 +25,88 @@
         <div class="form-area">
             <img src="@{'/public/images/logo.png'}">
 
-            <form class="row g-3" action="@{UsuariosAlunos.salvar}" method="post">
+            <form class="row g-3" action="@{UsuariosAlunos.salvar}" method="post" enctype="multipart/form-data">
                 <div class="col-md-12">
                     <h5 style="color: #185B61"><i class="bi bi-caret-right-fill"></i> Cadastro de Usuários</h5>
                 </div>
+
                 <div class="col-md-4">
                     <input type="hidden" name="u.id" value="${u?.id}" />
                     <label for="inputNome" class="form-label">Nome completo: </label>
-                    <input type="text" class="form-control" id="inputNome" name="u.nome" value="${u?.nome}">
+                    <input type="text" class="form-control is-invalid" id="inputNome" name="u.nome" value="${u?.nome}">
+                    <div id="inputNome" class="invalid-feedback">#{error 'u.nome' /}</div>
                 </div>
+
                 <div class="col-md-4">
                     <label for="inputEmail" class="form-label">Email:</label>
-                    <input type="email" class="form-control" id="inputEmail" name="u.email" value="${u?.email}">
+                    <input type="email" class="form-control is-invalid" id="inputEmail" name="u.email" value="${u?.email}">
+                    <div id="inputEmail" class="invalid-feedback">
+                        #{error 'u.email' /}
+                    </div>
                 </div>
+
                 <div class="col-md-4">
                     <label for="inputSenha" class="form-label">Senha:</label>
-                    <input type="password" class="form-control" id="inputSenha" name="u.senha" value="${u?.senha}">
+                    <input type="password" class="form-control is-invalid" id="inputSenha" name="u.senha" value="${u?.senha}">
+                    <div id="inputSenha" class="invalid-feedback">
+                        #{error 'u.senha' /}
+                    </div>
                 </div>
+
                 <div class="col-4">
                     <label for="inputNumero" class="form-label">Telefone:</label>
-                    <input type="text" class="form-control" id="inputNumero" placeholder="(xx) xxxxx-xxxx" name="u.telefone" value="${u?.telefone}">
+                    <input type="text" class="form-control is-invalid" id="inputNumero" placeholder="(xx) xxxxx-xxxx" name="u.telefone" value="${u?.telefone}">
+                    <div id="inputNumero" class="invalid-feedback">
+                        #{error 'u.telefone' /}
+                    </div>
                 </div>
+
                 <div class="col-4">
                     <label for="inputCpf" class="form-label">CPF:</label>
-                    <input type="text" class="form-control" id="inputCpf" placeholder="xxx.xxx.xxx-xx" name="u.cpf" value="${u?.cpf}">
+                    <input type="text" class="form-control is-invalid" id="inputCpf" placeholder="xxx.xxx.xxx-xx" name="u.cpf" value="${u?.cpf}">
+                    <div id="inputCpf" class="invalid-feedback">
+                        #{error 'u.cpf' /}
+                    </div>
                 </div>
+
                 <div class="col-md-4">
                     <label for="inputPublico" class="form-label">Perfil:</label>
-                    <select id="inputPublico" class="form-select" name="u.perfil">
+                    <select id="inputPublico" class="form-select is-invalid" name="u.perfil">
                           <option>Selecione...</option>
                           <option value="Aluno do IFRN">Aluno do IFRN</option>
                           <option value="Servidor do IFRN">Servidor do IFRN</option>
                           <option value="Público Externo">Público Externo</option>
                     </select>
+                    <div id="inputPublico" class="invalid-feedback">
+                        #{error 'u.perfil' /}
+                    </div>
                 </div>
+
                 <div class="col-md-3">
                     <label for="inputCidade" class="form-label">Cidade:</label>
-                    <input type="text" class="form-control" id="inputCidade" name="u.cidade" value="${u?.cidade}">
+                    <input type="text" class="form-control is-invalid" id="inputCidade" name="u.cidade" value="${u?.cidade}">
+                    <div id="inputCidade" class="invalid-feedback">
+                        #{error 'u.cidade' /}
+                    </div>
                 </div>
+
                 <div class="col-md-3">
                     <label for="inputEstado" class="form-label">Estado:</label>
-                    <select id="inputEstado" class="form-select" name="u.estado">
+                    <select id="inputEstado" class="form-select is-invalid" name="u.estado">
                           <option selected>Selecione...</option>
                           <option value="AM">Amazônas</option>
                           <option value="RJ">Rio de Janeiro</option>
                           <option value="RN">Rio Grande do Norte</option>
                           <option value="RS">Rio Grande do Sul</option>
                     </select>
+                    <div id="inputEstado" class="invalid-feedback">
+                        #{error 'u.estado' /}
+                    </div>
                 </div>
+
                 <div class="col-md-3">
                     <label for="inputIdade" class="form-label">Faixa Étaria:</label>
-                    <select id="inputIdade" class="form-select" name="u.idade">
+                    <select id="inputIdade" class="form-select is-invalid" name="u.idade">
                           <option selected>Selecione...</option>
                           <option value="Menor que 16 anos">Menor que 16 anos</option>
                           <option value="Entre 16 a 25 anos">Entre 16 a 25 anos</option>
@@ -83,10 +114,14 @@
                           <option value="Entre 40 a 60 anos">Entre 40 a 60 anos</option>
                           <option value="Mais de 60 anos">Mais de 60 anos</option>
                     </select>
+                    <div id="inputIdade" class="invalid-feedback">
+                        #{error 'u.idade' /}
+                    </div>
                 </div>
+
                 <div class="col-md-3">
                     <label for="inputEscolaridade" class="form-label">Cursando:</label>
-                    <select id="inputEscolaridade" class="form-select" name="u.escolaridade">
+                    <select id="inputEscolaridade" class="form-select is-invalid" name="u.escolaridade">
                           <option selected>Selecione...</option>
                           <option value="Ensino Fundamental">Ensino Fundamental</option>
                           <option value="Ensino Médio">Ensino Médio</option>
@@ -96,19 +131,26 @@
                           <option value="Doutorado">Doutorado</option>
                           <option value="Pós-doutorado">Pós-doutorado</option>
                     </select>
+                    <div id="inputEscolaridade" class="invalid-feedback">
+                        #{error 'u.escolaridade' /}
+                    </div>
                 </div>
+
                 <div class="col-12">
                     <label for="formFile" class="form-label">Escolha uma foto:</label>
-                    <input class="form-control" type="file" accept="image/png, image/gif, image/jpeg" name="u.foto" id="formFile">
+                    <input class="form-control is-invalid" type="file" accept="image/png, image/gif, image/jpeg" name="u.foto" id="formFile">
+                    <div id="formFile" class="invalid-feedback">
+                        #{error 'u.foto' /}
+                    </div>
                 </div>
+
                 <div class="col-12">
                     <div class="form-check">
                         <input class="form-check-input" type="checkbox" id="gridCheck">
-                        <label class="form-check-label" for="gridCheck">
-              Ciente de que meus dados serão utilizados apenas para fins acadêmicos da Instituição.
-            </label>
+                        <label class="form-check-label" for="gridCheck">Ciente de que meus dados serão utilizados apenas para fins acadêmicos da Instituição.</label>
                     </div>
                 </div>
+
                 <div class="col-12">
                     <input type="submit" class="btn btn-info" value="${u ? 'Editar':'Cadastrar-se'}">
                     <button type="reset" class="btn" style="background-color: orange;"> Limpar </button><br><br>

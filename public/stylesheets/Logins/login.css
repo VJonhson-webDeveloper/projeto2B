@@ -23,3 +23,13 @@ img {
     margin-bottom: 30px;
     margin-left: 30%;
 }
+
+@media screen and (min-width: 1800px) {
+    .form {
+        margin: 150px 600px 20px 600px;
+    }
+
+    img {
+        margin-left: 32%;
+    }
+}
