@@ -3,6 +3,7 @@ package controllers;
 import java.util.List;
 
 import models.Curso;
+import models.Usuario;
 import play.mvc.Controller;
 import play.mvc.With;
 import security.Administrador;
@@ -32,7 +33,7 @@ public class Cursos extends Controller {
     public static void remover(Long id) {
         Curso c = Curso.findById(id);
         c.delete();
-        listar();
+        UsuariosAdmin.listarCursos(id);
     }
 
     @Administrador

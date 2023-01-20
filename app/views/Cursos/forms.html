@@ -20,7 +20,7 @@
         <div class="form-area">
             <img src="@{'/public/images/logo.png'}">
 
-            <form class="row g-3" action="@{Cursos.salvar(c?.id)}" method="post">
+            <form class="row g-3" action="@{Cursos.salvar}" method="post">
                 <div class="col-md-12">
                     <h5 style="color: #185B61"><i class="bi bi-caret-right-fill"></i> Cadastro de Cursos</h5>
                 </div>
@@ -40,7 +40,7 @@
                     </textarea>
                 </div>
                 <div class="col-12">
-                    <input type="submit" class="btn btn-info" value="${u ? 'Editar':'Salvar'}">
+                    <input type="submit" class="btn btn-info" value="${c ? 'Editar':'Salvar'}">
                     <button type="reset" class="btn" style="background-color: orange;"> Limpar </button><br><br>
                     <a href="@{telainicial.inicio}" style="color: #185B61; text-decoration: none; font-weight: 500;"><i class="bi bi-arrow-left-circle" style="font-size: 18px;"></i> Voltar</a>
                 </div>
