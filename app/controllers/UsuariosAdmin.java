@@ -46,7 +46,7 @@ public class UsuariosAdmin extends Controller {
     public static void editar(Long id) {
         List<Curso> cursos = Curso.findAll();
         Usuario u = Usuario.findById(id);
-        renderTemplate("Usuarios/forms.html", u, cursos);
+        renderTemplate("UsuariosAlunos/forms.html", u, cursos);
 
     }
 
@@ -58,5 +58,12 @@ public class UsuariosAdmin extends Controller {
     public static void getFoto(Long id) {
         Usuario u = Usuario.findById(id);
         renderBinary(u.foto.getFile());
+    }
+
+    @Administrador
+    public static void listarCursos(Long id) {
+        Usuario u = Usuario.findById(id);
+        List<Curso> cursos = Curso.findAll();
+        render(cursos, u);
     }
 }

@@ -22,6 +22,7 @@ public class Inicializador extends Job {
 			admin.cidade = "Natal";
 			admin.estado = "Rio Grande do Norte";
 			admin.idade = "Desconhecida";
+			admin.escolaridade = "Desconhecida";
 			admin.papel = Papel.ADMIN;
 			admin.save();
 		}

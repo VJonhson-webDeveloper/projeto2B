@@ -278,31 +278,35 @@ footer {
     }
 }
 
-@media screen and (min-width: 1800px) {
-    .navbar {
-        align-items: center;
-        justify-content: center;
-    }
-
+@media screen and (min-width: 1024px) {
     .nav-link.link {
-        margin-left: 290px;
-    }
-
-    .nav-link .link a img {
-        margin-left: 200px;
-
+        margin-left: 150px;
     }
     .nav-link {
         color: white;
         font-size: 17px;
     }
-    
+}
+
+@media screen and (min-width: 1800px) {
+    .navbar {
+        align-items: center;
+        justify-content: center;
+    }
+    .nav-link.link {
+        margin-left: 290px;
+    }
+    .nav-link .link a img {
+        margin-left: 200px;
+    }
+    .nav-link {
+        color: white;
+        font-size: 17px;
+    }
     .link-nav {
         margin-left: 35px;
     }
-
     .btn-info {
         margin-left: 15px;
     }
-    
 }

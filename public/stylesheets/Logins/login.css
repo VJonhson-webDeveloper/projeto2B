@@ -24,11 +24,19 @@ img {
     margin-left: 30%;
 }
 
+@media screen and (min-width: 1024px) {
+    .form {
+        margin: 80px 450px 0px 450px;
+    }
+    img {
+        margin-left: 30%;
+    }
+}
+
 @media screen and (min-width: 1800px) {
     .form {
         margin: 150px 600px 20px 600px;
     }
-
     img {
         margin-left: 32%;
     }

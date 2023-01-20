@@ -17,9 +17,9 @@ public class Cursos extends Controller {
     }
 
     @Administrador
-    public static void salvar(Curso c) {
+    public static void salvar(Curso c, Long id) {
         c.save();
-        listar();
+        UsuariosAdmin.listarCursos(id);
     }
 
     @Administrador
