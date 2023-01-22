@@ -15,7 +15,7 @@ public class Inicializador extends Job {
 			Usuario admin = new Usuario();
 			admin.email = "ifrn@ifrn.edu.br";
 			admin.senha = Crypto.passwordHash("ifrn");
-			admin.nome = "Administrador do projeto de extensão";
+			admin.nome = "Administrador do sistema";
 			admin.telefone = "(84) 91111-0000";
 			admin.cpf = "111.222.333-04";
 			admin.perfil = "Servidor do IFRN";

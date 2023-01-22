@@ -1,0 +1,237 @@
+<html lang="pt-br">
+
+<head>
+    <meta charset="${_response_encoding}">
+    <meta charset="UTF-8">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" media="screen" href="@{'/public/stylesheets/usuariosadmin/detalhar.css'}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;1,100;1,200;1,300;1,400;1,500&display=swap" rel="stylesheet">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de Cursos</title>
+</head>
+
+<body>
+    <!--Menu de Navegação-->
+    <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #185B61;">
+        <div class="container-fluid" style="background-color: #185B61;">
+            <a class="nav-link link" href="#" style="margin-left: 150px;"><img src="@{'/public/images/logo-ifrn.png'}"></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+            <div class="collapse navbar-collapse mx-auto" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link link-nav" href="#" style="margin-left: 150px;">Sobre nós</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link link-nav" href="#">Cursos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link link-nav" href="#">Equipe</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link link-nav" href="#">Dicas</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link link-nav" href="#">Redes sociais</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link link btn btn-outline-info" href="@{logins.logout}"> Sair </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link link btn btn-info" href="@{usuariosAlunos.forms}" style="margin-left: 15px;">Cadastrar-se</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <nav class="sidebar close">
+            <header>
+                <div class="image-text">
+                    <span class="image">
+                        <img src="@{'/public/images/logo.png'}" alt="">
+                    </span>
+
+                    <div class="text header-text">
+                        <span class="nome">${u?.nome}</span>
+                        <span class="papel">${u?.perfil}</span>
+                    </div>
+                </div>
+
+                <i class="bi bi-arrow-right-short toggle"></i>
+            </header>
+
+            <div class="menu-bar">
+                <div class="menu">
+                    <li class="search-box">
+                        <i class="bi bi-search icon"></i>
+                        <input type="search" placeholder="Digite...">
+                    </li>
+                    <li class="nav-link">
+                        <a href="#">
+                            <i class="bi bi-house icon"></i>
+                            <span class="text nav-text">Home</span>
+                        </a>
+                    </li>
+                    <li class="nav-link">
+                        <a href="#">
+                            <i class="bi bi-person-circle icon"></i>
+                            <span class="text nav-text">Perfil</span>
+                        </a>
+                    </li>
+                    <li class="nav-link">
+                        <a href="#">
+                            <i class="bi bi-columns-gap icon"></i>
+                            <span class="text nav-text">Cursos</span>
+                        </a>
+                    </li>
+                    <li class="nav-link">
+                        <a href="#">
+                            <i class="bi bi-cloud-download icon"></i>
+                            <span class="text nav-text">Certificados</span>
+                        </a>
+                    </li>
+                </div>
+
+                <div class="bottom-content">
+                    <li class="">
+                        <a href="@{logins.logout}">
+                            <i class="bi bi-box-arrow-left icon"></i>
+                            <span class="text nav-text">Sair</span>
+                        </a>
+                    </li>
+                </div>
+            </div>
+        </nav>
+
+        <section class="home">
+            <div class="text">
+                <small class="status">${u?.status}</small>
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th scope="col" colspan="2"><img src="@{UsuariosAdmin.getFoto(u?.id)}" alt="" class="rounded-circle"></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td scope="row" style="padding: 12px;">
+                                <!--Listagem de Cursos-->
+                                <img class="logo" src="@{'/public/images/logo.png'}" style="width: 10px;">
+
+
+                                <!--Cards dos cursos-->
+                                <div class="cursos">
+                                    <div class="row g-3" style="margin-top: 25px; margin-bottom: 25px;">
+                                        <div class="col-md-12">
+                                            <h5 style="color: #185B61;"><i class="bi bi-caret-right-fill"></i> Listagem de Cursos</h5>
+                                        </div>
+                                    </div>
+
+                                    <div class="row row-cols-1 row-cols-md-3 g-4">
+                                        #{list items:cursos, as:'c'}
+                                        <div class="col">
+                                            <div class="card h-100 border-info mb-3">
+                                                <img src="@{'/public/images/beginner.png'}" class="card-img-top">
+                                                <div class="card-body">
+                                                    <h5 class="card-title">${c.titulo}</h5>
+                                                    <p class="card-text">${c.descricao}</p>
+                                                </div>
+                                                <div class="card-footer">
+                                                    <a href="@{Cursos.editar(c.id)}" class="btn btn-danger" style="background-color: orange;">Editar</a>
+                                                    <a href="@{Cursos.remover(c.id)}" class="btn btn-danger" onclick="if (!confirm('Deseja realmente remover este curso?')) return false;">Remover</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        #{/list}
+                                    </div>
+                                </div>
+                            </td>
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <td scope="row" colspan="2" style="padding: 12px;">
+                                <a href="" class="btn text-white" style="background-color: #185B61;"><i class="bi bi-person-fill"></i> Cursos</a>
+                                <a href="" class="btn text-white" style="background-color: #185B61;"><i class="bi bi-cloud-download icon"></i> Certificados</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td scope="row" colspan="2" style="padding: 12px;">
+                                <a href="" class="btn btn-info">Editar dados <i class="bi bi-chevron-down"></i> </a>
+                                <a href="" class="btn btn-info">Ir para o topo <i class="bi bi-chevron-up"></i></a>
+                            </td>
+                        </tr>
+                    </tfoot>
+                </table>
+            </div>
+        </section>
+
+        <script src="@{'/public/javascripts/usuariosadmin/detalhar.js'}"></script>
+    </div>
+
+
+    <!--Parte Final do Site-->
+    <footer>
+        <div class="container-footer">
+            <div class="row-footer">
+                <div class="column-footer">
+                    <ul>
+                        <h4>IF Meetings 2022</h4>
+                        <li style="font-weight: 300;">O IF Meetings é um projeto de Extensão do Instituto Federal de Educação, Ciência e Tecnologia do Rio Grande do Norte - campus João Câmara, do qual oferta aulas de inglês online e gratuitas com professores da instituição para toda
+                            a comunidade.
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="column-footer">
+                    <ul>
+                        <h4>Cursos</h4>
+                        <li><a href="">Iniciante</a></li>
+                        <li><a href="">Elementar</a></li>
+                        <li><a href="">Conversação</a></li>
+                        <li><a href="">Como se inscrever</a></li>
+                    </ul>
+                </div>
+
+                <div class="column-footer">
+                    <ul>
+                        <h4>Links Úteis</h4>
+                        <li><a href="">Portal IFRN</a></li>
+                        <li><a href="">Sobre nós</a></li>
+                        <li><a href="">Dicas</a></li>
+                        <li><a href="">Equipe</a></li>
+                        <li><a href="">Cadastrar-se</a></li>
+                    </ul>
+                </div>
+
+                <div class="column-footer">
+                    <h4>Novidades</h4>
+
+                    <div class="form">
+                        <form action="">
+                            <input type="email" placeholder="Digite o seu e-mail">
+                            <button>Enviar</button>
+                        </form>
+                    </div>
+
+                    <div class="social-media">
+                        <a href="#"><i class="bi bi-facebook"></i></a>
+                        <a href="#"><i class="bi bi-instagram"></i></a>
+                        <a href="#"><i class="bi bi-youtube"></i></a>
+                        <a href="#"><i class="bi bi-whatsapp"></i></a>
+                        <a href="#"><i class="bi bi-telegram"></i></a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>

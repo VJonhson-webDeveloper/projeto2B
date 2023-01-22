@@ -1,0 +1,72 @@
+#{set title:'IF Meetings' /}
+<meta charset="${_response_encoding}">
+<meta charset="UTF-8">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+<link rel="stylesheet" media="screen" href="@{'/public/stylesheets/usuarios/listar.css'}">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;1,100;1,200;1,300;1,400;1,500&display=swap" rel="stylesheet">
+
+<body>
+
+    <div class="form">
+        <div class="form-area">
+                <img src="@{'/public/images/logo.png'}">
+
+            <h5 style="color: #185B61"><i class="bi bi-caret-right-fill"></i> Listagem de Usuários</h5>
+
+            <form action="@{UsuariosAdmin.listar}">
+                <div class="row">
+                    <div class="col-12">
+                        <label class="form-label">Termo de busca:</label>
+                    </div>
+                    <div class="col-10">
+                        <input type="text" name="termo" class="form-control" />
+                    </div>
+                    <input type="submit" value="Pesquisar" class="btn btn-info btn-sm col-2" />
+                </div>
+                #{if termo}
+                <small>Pesquisando por: ${termo}</small> #{/if} #{else}
+                <small>Pesquisando por: TODOS</small> #{/else}
+            </form>
+
+
+            <table class="table table-striped table-hover">
+                <thead>
+                    <tr>
+                        <th>Nome: </th>
+                        <th>Email:</th>
+                        <th>Telefone:</th>
+                        <th>CPF:</th>
+                        <th>Perfil:</th>
+                        <th>Cidade:</th>
+                        <th>Estado:</th>
+                        <th>Faixa Étaria:</th>
+                        <th>Cursando:</th>
+                        <th>Ações:</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    #{list items:usuarios, as:'u'}
+                    <tr>
+                        <td style="width: 100px;">${u.nome}</td>
+                        <td>${u.email}</td>
+                        <td>${u.telefone}</td>
+                        <td>${u.cpf}</td>
+                        <td>${u.perfil}</td>
+                        <td>${u.cidade}</td>
+                        <td>${u.estado}</td>
+                        <td>${u.idade}</td>
+                        <td>${u.escolaridade}</td>
+                        <td>
+                            <a href="@{UsuariosAdmin.remover(u.id)}" class="btn btn-danger btn-sm">Remover</a><br>
+                            <a href="@{UsuariosAdmin.editar(u.id)}" class="btn btn-danger btn-sm" style="background-color: orange; margin-top: 5px;">Editar</a>
+                        </td>
+                    </tr>
+                    #{/list}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>

@@ -1,0 +1,25 @@
+body {
+    background: linear-gradient(135deg, rgba(241, 170, 38, 0.65), rgba(63, 210, 223, 0.65)), 
+    url() no-repeat center center / cover;
+}
+
+.form {
+    background-color: whitesmoke;
+    background-color: whitesmoke;
+    border-radius: 15px;
+    box-shadow: 0px 0px 15px -1px rgba(160, 160, 160, 0.84); 
+    justify-content: center;
+    margin: 20px 100px 20px 100px; 
+    height: 1000px;
+}
+
+.form-area {
+    background-color: whitesmoke; 
+    margin: 50px;
+}
+
+img {
+    width: 200px; 
+    margin-top: 30px;
+    margin-left: 40%;
+}

@@ -1,0 +1,100 @@
+#{extends 'main.html' /} #{set title:'IF Meetings' /}
+
+<!-- Parte Inicial com Apresentação do Projeto-->
+<main class="main">
+
+    <!--=========HOME============-->
+    <section class="home" id="home">
+        <div class="home_container container grid">
+            <img src="@{'/public/images/icone.png'}" alt="" class="home_img" style="float: right;">
+
+            <div class="home_data">
+                <h1 class="home_title">
+                    Projeto de extensão do IFRN <br> com aulas gratuitas e online de Língua Inglesa
+                </h1>
+                <p class="home_description">
+                    Ao prender o inglês você abrenge a suas oportunidades a nível internacional, além de se destacar profissionalmente em uma oportunidade de emprego, por exemplo. Quer aprender inglês de forma totalmente gratuita, com professores qualificados e ainda ganhar
+                    um certificado do IFRN? Clica no botão abaixo e saiba mais.
+                </p>
+                <a href="#" class="button button--flex">
+                    Saiba mais <i class="bi bi-arrow-down-right button_icon"></i>
+                </a>
+            </div>
+
+            <div class="home_social">
+                <span class="home_social-follow">Siga-nos</span>
+
+                <div class="home_social-links">
+                    <a href="" class="home_social-link" target="_blank">
+                        <i class="bi bi-facebook"></i>
+                    </a>
+                    <a href="" class="home_social-link" target="_blank">
+                        <i class="bi bi-instagram"></i>
+                    </a>
+                    <a href="" class="home_social-link" target="_blank">
+                        <i class="bi bi-youtube"></i>
+                    </a>
+                    <a href="" class="home_social-link" target="_blank">
+                        <i class="bi bi-whatsapp"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="about">
+        <div class="card mb-3" style="max-width: 100%;">
+            <div class="row g-0">
+                <div class="col-md-4">
+                    <img src="@{'/public/images/fotoInicio.png'}" class="img-fluid rounded-start" alt="...">
+                </div>
+                <div class="col-md-8">
+                    <div class="card-body">
+                        <h3 class="card-title">Conversações gratuitas e onlines <br> em inglês com professores da instituição</h3>
+                        <p class="card-text">
+                            Atualmente, o projeto possui três modalidades de cursos para todo o público: o beginner, o elementary e o convesation. Sendo cursos administrados pelo o coordenador do projeto com auxilio de outros 3 professores da instituição, além do suporte técnico
+                            de três bolsistas voluntarios. <br><br> Segundo dados do Consulado Britânico em 2015, pesquisas apontaram que apenas 5% da população brasileira é fluente em inglês. Além disso, dados apontaram que
+                            há três barreiras principais que impedem os brasileiros de aprender esse idioma: a falta de ofertas públicas, os custos provinentes dos cursos pagos, a locomação e disponibilidade de tempo dos estudantes até o local de ensino.
+                            Portanto, o projeto foi desenvolvido como agente inovador para contribuir na solução dessa problemática através de cursos ofertados por uma instituição pública de ensino e no formato remoto.
+                        </p>
+                        <p class="card-text"><small class="text-muted">IFRN campus Joâo Câmara</small></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Codigos dos Cards dos Cursos-->
+    <div class="row row-cols-1 row-cols-md-3 g-4" style="justify-content: center; margin-top: 10px;">
+        <div class="col" style="width: 280px; margin-right: 80px;">
+            <div class="card h-100">
+                <img src="@{'/public/images/beginner.png'}" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Curso para Iniciantes</h5>
+                    <p class="card-text">O nível iniciante é voltado para pessoas que querem iniciar os estudos na língua Inglesa ou que iniciaram mas não conseguiram terminar o curso iniciante em módulos anteriores.</p>
+                    <button type="button" class="btn btn-info btn-sm">Inscrever-se</button>
+                </div>
+            </div>
+        </div>
+        <div class="col" style="width: 280px; margin-left: 40px; margin-right: 40px;">
+            <div class="card h-100">
+                <img src="@{'/public/images/elementary.png'}" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Curso para Intermediários</h5>
+                    <p class="card-text">O nível elementar é voltado para pessoas que terminaram o curso iniciante do IF Meetings ou têm condições de começar um curso 100% em inglês.</p>
+                    <button type="button" class="btn btn-info btn-sm">Inscrever-se</button>
+                </div>
+            </div>
+        </div>
+        <div class="col" style="width: 280px; margin-left: 80px;">
+            <div class="card h-100">
+                <img src="@{'/public/images/conversation.png'}" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Conversações em inglês</h5>
+                    <p class="card-text">O nível avançado é voltado para pessoas que estudam inglês a algum tempo e têm interesse em melhorar sua oralidade.</p>
+                    <button type="button" class="btn btn-info btn-sm">Inscrever-se</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>

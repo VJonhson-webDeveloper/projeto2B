@@ -1,0 +1,53 @@
+<html lang="pt-br">
+
+<head>
+    <meta charset="${_response_encoding}">
+    <meta charset="UTF-8">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" media="screen" href="@{'/public/stylesheets/cursos/forms.css'}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;1,100;1,200;1,300;1,400;1,500&display=swap" rel="stylesheet">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de Cursos</title>
+</head>
+
+<body>
+
+    <div class="form">
+        <div class="form-area">
+            <img src="@{'/public/images/logo.png'}">
+
+            <form class="row g-3" action="@{Cursos.salvar}" method="post">
+                <div class="col-md-12">
+                    <h5 style="color: #185B61"><i class="bi bi-caret-right-fill"></i> Cadastro de Cursos</h5>
+                </div>
+
+                <div class="col-md-12">
+                    <input type="hidden" name="c.id" value="${c?.id}" />
+                    <label for="inputTitulo" class="form-label">Titulo: </label>
+                    <input type="text" class="form-control" id="inputTitulo" name="c.titulo" value="${c?.titulo}">
+                </div>
+                <div class="col-md-12">
+                    <label for="inputFotoCurso" class="form-label">Capa do Curso: </label>
+                    <input type="file" class="form-control" name="c.foto" value="${c?.foto}" id="inputFotoCurso">
+                </div>
+                <div class="col-md-12">
+                    <label for="inputDescricao" class="form-label">Descrição: </label>
+                    <textarea class="form-control" name="c.descricao" value="${c?.descricao}" id="inputDescricao" cols="30" rows="6">
+                    </textarea>
+                </div>
+                <div class="col-12">
+                    <input type="submit" class="btn btn-info" value="${c ? 'Editar':'Salvar'}">
+                    <button type="reset" class="btn" style="background-color: orange;"> Limpar </button><br><br>
+                    <a href="@{telainicial.inicio}" style="color: #185B61; text-decoration: none; font-weight: 500;"><i class="bi bi-arrow-left-circle" style="font-size: 18px;"></i> Voltar</a>
+                </div>
+            </form>
+        </div>
+    </div>
+
+</body>
+
+</html>

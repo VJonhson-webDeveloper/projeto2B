@@ -116,7 +116,11 @@
                 <table class="table">
                     <thead>
                         <tr>
+                            #{if session.get('papel') == session.get('USUARIO')}
                             <th scope="col" colspan="2"><img src="@{UsuariosAdmin.getFoto(u?.id)}" alt="" class="rounded-circle"></th>
+                            #{/if} #{else}
+                            <th scope="col" colspan="2"><img src="@{'public/images/admin.jpeg'}" alt="" class="rounded-circle"></th>
+                            #{/else}
                         </tr>
                     </thead>
                     <tbody>
